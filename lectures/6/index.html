@@ -6,7 +6,7 @@
           if (t) document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
-    </script><link rel="stylesheet" href="/symmetries/_astro/about.CFU8HawB.css"></head> <body> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/">Symmetries <span>· in Physics</span></a> <nav class="site-nav"> <a href="/symmetries/" aria-current="page"> Lectures </a><a href="/symmetries/problems"> Problems </a><a href="/symmetries/ai"> Study with AI </a><a href="/symmetries/about"> About </a><a href="/symmetries/search"> Search </a> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" data-pagefind-body>  <header class="lecture-head"> <div class="eyebrow">Lecture 6</div> <h1>Application I: point groups and molecular vibrations</h1> <div class="objectives"> <h2>What this lecture does</h2> <p>The machinery of Lectures 3–5 now earns its keep on a concrete physical problem: the small oscillations of a molecule about equilibrium. We set up the dynamical matrix from first principles, let the point group act on displacements, and prove the central theorem of the subject: symmetry block-diagonalises the dynamical matrix, so that vibrational frequencies organise into families labelled by irreducible representations. Their dimensions give symmetry-enforced multiplet sizes; reduced-matrix multiplicity and the reality of the physical displacement space determine the total degeneracy. The programme is carried out in full for water and ammonia, including explicit symmetry-adapted modes from projection operators.</p> </div> <div class="actions"> <a class="btn btn-primary" href="/symmetries/lectures/6/problems">
+    </script><link rel="stylesheet" href="/symmetries/_astro/about.BfPgBeWz.css"></head> <body> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/">Symmetries <span>· in Physics</span></a> <nav class="site-nav"> <a href="/symmetries/" aria-current="page"> Lectures </a><a href="/symmetries/problems"> Problems </a><a href="/symmetries/review"> Review </a><a href="/symmetries/ai"> Study with AI </a><a href="/symmetries/about"> About </a><a href="/symmetries/search"> Search </a> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" data-pagefind-body>  <header class="lecture-head"> <div class="eyebrow">Lecture 6</div> <h1>Application I: point groups and molecular vibrations</h1> <div class="objectives"> <h2>What this lecture does</h2> <p>The machinery of Lectures 3–5 now earns its keep on a concrete physical problem: the small oscillations of a molecule about equilibrium. We set up the dynamical matrix from first principles, let the point group act on displacements, and prove the central theorem of the subject: symmetry block-diagonalises the dynamical matrix, so that vibrational frequencies organise into families labelled by irreducible representations. Their dimensions give symmetry-enforced multiplet sizes; reduced-matrix multiplicity and the reality of the physical displacement space determine the total degeneracy. The programme is carried out in full for water and ammonia, including explicit symmetry-adapted modes from projection operators.</p> </div> <div class="actions"> <a class="btn btn-primary" href="/symmetries/lectures/6/problems">
 Problems · 7 </a> <a class="btn" href="/symmetries/pdfs/lecture-6.pdf">Notes (PDF)</a> <a class="btn" href="/symmetries/pdfs/exercises-6.pdf">Sheet (PDF)</a> </div> </header> <div class="lecture-layout"> <article class="notes">   <section class="section-block" id="sec:06:smallosc"> <h1>Small oscillations and the dynamical matrix</h1> <p>Consider a molecule of <span class="katex"><span class="katex-mathml" data-pagefind-ignore><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span> atoms with masses <span class="katex"><span class="katex-mathml" data-pagefind-ignore><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">m_a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and equilibrium positions <span class="katex"><span class="katex-mathml" data-pagefind-ignore><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover accent="true"><mi>R</mi><mo>⃗</mo></mover><mi>a</mi><mrow><mtext> </mtext><mn>0</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\vec R_a^{\,0}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2133em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
@@ -445,112 +445,10 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
 Worked in the tutorial:
 <a href="/symmetries/lectures/6/problems">
 Exercise Sheet 6</a>.
-</p> </section> <section class="quiz" id="self-check"><h1>Self-check</h1><p class="quiz-lede">5 questions on the ideas this lecture is most often
+</p> </section> <section class="quiz" id="self-check" data-quiz data-lecture="6"><h1>Self-check</h1><p class="quiz-lede">5 questions on the ideas this lecture is most often
       misread on. Answer before you look — a wrong answer you thought about is
       worth more than a right one you guessed.
-</p><div class="quiz-q" data-question data-id="fixed-atoms" data-type="choice" data-answer="0" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">1</span>In the displacement character, which atoms contribute to the trace of a symmetry operation?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Only atoms left in place</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>Only hydrogen atoms</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>All atoms equally</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Moved atoms occupy off-diagonal permutation blocks.</p><div class="quiz-why" data-why hidden>Only fixed atoms contribute diagonal blocks and hence trace.</div></div><div class="quiz-q" data-question data-id="water-modes" data-type="numeric" data-answer="3" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">2</span>How many vibrational normal modes does nonlinear H₂O have?</p><div class="quiz-numeric"><input type="text" inputmode="decimal" data-numeric aria-label="Your answer" placeholder="your answer"><button class="quiz-submit" type="button" data-submit>Check</button></div><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Use 3N−6 for a nonlinear molecule, with N=3.</p><div class="quiz-why" data-why hidden>3×3−6=3: two stretches and a bend.</div></div><div class="quiz-q" data-question data-id="water-symmetric" data-type="choice" data-answer="0" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">3</span>Which C₂ᵥ symmetry type contains the symmetric O–H stretch of water?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>A₁</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>A₂</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>B₁</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>It is left unchanged by every molecular symmetry operation.</p><div class="quiz-why" data-why hidden>The fully symmetric coordinate transforms as A₁.</div></div><div class="quiz-q" data-question data-id="water-bend" data-type="choice" data-answer="0" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">4</span>Does the H–O–H bend have the same symmetry type as the symmetric stretch?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Yes</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>No</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>Only at equilibrium</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Both hydrogens move symmetrically.</p><div class="quiz-why" data-why hidden>Both normal coordinates transform as A₁, though the dynamical matrix gives them different frequencies.</div></div><div class="quiz-q" data-question data-id="water-antisymmetric" data-type="choice" data-answer="1" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">5</span>What happens to the antisymmetric stretch when the two hydrogens are exchanged?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>It is unchanged</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>It changes sign</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>It becomes a translation</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>One bond lengthens while the other shortens.</p><div class="quiz-why" data-why hidden>Exchange reverses this coordinate, which is what distinguishes its B₁ type.</div></div><p class="quiz-score" data-score aria-live="polite"></p></section><script>(function(){const lectureId = 6;
-
-  (function () {
-    var key = "symmetries-selfcheck-" + lectureId;
-    var store = {};
-    try { store = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
-
-    var questions = document.querySelectorAll("[data-question]");
-    var score = document.querySelector("[data-score]");
-    var answered = 0;
-    var right = 0;
-
-    function save() {
-      try { localStorage.setItem(key, JSON.stringify(store)); } catch (e) {}
-    }
-
-    function tally() {
-      if (!score) return;
-      score.textContent = answered
-        ? right + " of " + answered + " answered correctly."
-        : "";
-    }
-
-    /**
-     * A typed numeric answer is compared within the question's own tolerance.
-     * A tolerance of 0 means exactly right, which is what a group order or a
-     * multiplicity wants; anything with a fractional value carries a real one.
-     */
-    function numericMatches(typed, expected, tolerance) {
-      var value = Number(String(typed).trim().replace(/[−–—]/g, "-").replace(/\s+/g, ""));
-      if (!isFinite(value)) return null;
-      return Math.abs(value - expected) <= (tolerance || 0);
-    }
-
-    questions.forEach(function (question) {
-      var why = question.querySelector("[data-why]");
-      var hint = question.querySelector("[data-hint]");
-      var hintBtn = question.querySelector("[data-hint-btn]");
-      var expected = Number(question.dataset.answer);
-      var tolerance = Number(question.dataset.tolerance);
-      var usedHint = false;
-
-      if (hintBtn) {
-        hintBtn.addEventListener("click", function () {
-          if (hint) hint.hidden = false;
-          usedHint = true;
-          hintBtn.disabled = true;
-        });
-      }
-
-      function settle(correct) {
-        if (question.dataset.done) return;
-        question.dataset.done = "yes";
-        answered += 1;
-        if (correct) right += 1;
-        if (why) why.hidden = false;
-        if (hintBtn) hintBtn.disabled = true;
-        question.classList.add(correct ? "is-right" : "is-wrong");
-        store[question.dataset.id] = { correct: correct, hinted: usedHint };
-        save();
-        tally();
-      }
-
-      if (question.dataset.type === "choice") {
-        var options = question.querySelectorAll("[data-option]");
-        options.forEach(function (option) {
-          option.addEventListener("click", function () {
-            if (question.dataset.done) return;
-            var chosen = Number(option.dataset.option);
-            options.forEach(function (other) {
-              other.disabled = true;
-              var index = Number(other.dataset.option);
-              if (index === expected) other.classList.add("is-right");
-              else if (index === chosen) other.classList.add("is-wrong");
-            });
-            settle(chosen === expected);
-          });
-        });
-      } else {
-        var input = question.querySelector("[data-numeric]");
-        var submit = question.querySelector("[data-submit]");
-        var check = function () {
-          if (question.dataset.done || !input) return;
-          var verdict = numericMatches(input.value, expected, tolerance);
-          if (verdict === null) {
-            input.setAttribute("aria-invalid", "true");
-            return;
-          }
-          input.removeAttribute("aria-invalid");
-          input.disabled = true;
-          if (submit) submit.disabled = true;
-          settle(verdict);
-        };
-        if (submit) submit.addEventListener("click", check);
-        if (input) {
-          input.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") { event.preventDefault(); check(); }
-          });
-        }
-      }
-    });
-  })();
-})();</script> <section class="references" id="references"> <h2>Further reading</h2> <p>Bishop, <em>Group Theory and Chemistry</em>; Tinkham, <em>Group Theory and Quantum Mechanics</em> (molecular vibrations); Elliott–Dawber, <em>Symmetry in Physics</em> (vibrational analysis).</p> </section> </article> <aside class="lecture-rail"> <nav aria-label="Contents"> <h2>Contents</h2> <ol>  <li> <a href="#sec:06:smallosc">Small oscillations and the dynamical matrix</a> </li>  <li> <a href="#sec:06:displacement">The displacement representation</a> </li>  <li> <a href="#sec:06:rigid">Discarding rigid motions</a> </li>  <li> <a href="#sec:06:theorem">The central theorem: symmetry block-diagonalises <span class="katex"><span class="katex-mathml" data-pagefind-ignore><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span></span></span></span></a> </li>  <li> <a href="#sec:06:water">Worked example: water</a> </li>  <li> <a href="#sec:06:ammonia">Worked example: ammonia</a> </li>  <li> <a href="#sec:06:spectroscopy">Infrared and Raman activity: a preview</a> </li>  <li><a href="#summary">Summary</a></li> <li><a href="#self-check">Self-check</a></li> </ol> </nav> </aside> </div> <script>
+</p><div class="quiz-q" data-question data-id="fixed-atoms" data-type="choice" data-answer="0" data-tolerance="0" data-concepts="displacement-representation"><p class="quiz-stem"><span class="quiz-n">1</span>In the displacement character, which atoms contribute to the trace of a symmetry operation?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Only atoms left in place</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>Only hydrogen atoms</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>All atoms equally</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Moved atoms occupy off-diagonal permutation blocks.</p><div class="quiz-why" data-why hidden>Only fixed atoms contribute diagonal blocks and hence trace.</div></div><div class="quiz-q" data-question data-id="water-modes" data-type="numeric" data-answer="3" data-tolerance="0" data-concepts="molecular-mode-symmetry"><p class="quiz-stem"><span class="quiz-n">2</span>How many vibrational normal modes does nonlinear H₂O have?</p><div class="quiz-numeric"><input type="text" inputmode="decimal" data-numeric aria-label="Your answer" placeholder="your answer"><button class="quiz-submit" type="button" data-submit>Check</button></div><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Use 3N−6 for a nonlinear molecule, with N=3.</p><div class="quiz-why" data-why hidden>3×3−6=3: two stretches and a bend.</div></div><div class="quiz-q" data-question data-id="water-symmetric" data-type="choice" data-answer="0" data-tolerance="0" data-concepts="molecular-mode-symmetry"><p class="quiz-stem"><span class="quiz-n">3</span>Which C₂ᵥ symmetry type contains the symmetric O–H stretch of water?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>A₁</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>A₂</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>B₁</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>It is left unchanged by every molecular symmetry operation.</p><div class="quiz-why" data-why hidden>The fully symmetric coordinate transforms as A₁.</div></div><div class="quiz-q" data-question data-id="water-bend" data-type="choice" data-answer="0" data-tolerance="0" data-concepts="molecular-mode-symmetry"><p class="quiz-stem"><span class="quiz-n">4</span>Does the H–O–H bend have the same symmetry type as the symmetric stretch?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Yes</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>No</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>Only at equilibrium</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Both hydrogens move symmetrically.</p><div class="quiz-why" data-why hidden>Both normal coordinates transform as A₁, though the dynamical matrix gives them different frequencies.</div></div><div class="quiz-q" data-question data-id="water-antisymmetric" data-type="choice" data-answer="1" data-tolerance="0" data-concepts="displacement-representation molecular-mode-symmetry"><p class="quiz-stem"><span class="quiz-n">5</span>What happens to the antisymmetric stretch when the two hydrogens are exchanged?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>It is unchanged</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>It changes sign</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>It becomes a translation</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>One bond lengthens while the other shortens.</p><div class="quiz-why" data-why hidden>Exchange reverses this coordinate, which is what distinguishes its B₁ type.</div></div><p class="quiz-score" data-score aria-live="polite"></p></section><script type="module" src="/symmetries/_astro/Quiz.astro_astro_type_script_index_0_lang.Dv46URGz.js"></script> <section class="references" id="references"> <h2>Further reading</h2> <p>Bishop, <em>Group Theory and Chemistry</em>; Tinkham, <em>Group Theory and Quantum Mechanics</em> (molecular vibrations); Elliott–Dawber, <em>Symmetry in Physics</em> (vibrational analysis).</p> </section> </article> <aside class="lecture-rail"> <nav aria-label="Contents"> <h2>Contents</h2> <ol>  <li> <a href="#sec:06:smallosc">Small oscillations and the dynamical matrix</a> </li>  <li> <a href="#sec:06:displacement">The displacement representation</a> </li>  <li> <a href="#sec:06:rigid">Discarding rigid motions</a> </li>  <li> <a href="#sec:06:theorem">The central theorem: symmetry block-diagonalises <span class="katex"><span class="katex-mathml" data-pagefind-ignore><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span></span></span></span></a> </li>  <li> <a href="#sec:06:water">Worked example: water</a> </li>  <li> <a href="#sec:06:ammonia">Worked example: ammonia</a> </li>  <li> <a href="#sec:06:spectroscopy">Infrared and Raman activity: a preview</a> </li>  <li><a href="#summary">Summary</a></li> <li><a href="#self-check">Self-check</a></li> </ol> </nav> </aside> </div> <script>
     // Highlight the section currently in view in the contents rail.
     (function () {
       var links = {};

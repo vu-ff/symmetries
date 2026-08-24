@@ -6,7 +6,7 @@
           if (t) document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
-    </script><link rel="stylesheet" href="/symmetries/_astro/about.CFU8HawB.css"></head> <body> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/">Symmetries <span>· in Physics</span></a> <nav class="site-nav"> <a href="/symmetries/" aria-current="page"> Lectures </a><a href="/symmetries/problems"> Problems </a><a href="/symmetries/ai"> Study with AI </a><a href="/symmetries/about"> About </a><a href="/symmetries/search"> Search </a> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" data-pagefind-body>  <header class="lecture-head"> <div class="eyebrow">Lecture 2</div> <h1>Structure of groups, and a first look at crystallographic groups</h1> <div class="objectives"> <h2>What this lecture does</h2> <p>We learn to compare groups by structure-preserving maps and to take groups apart: homomorphisms and their kernels, conjugacy and its geometric meaning, quotient groups and the first isomorphism theorem, direct products, and the construction of semidirect products from a normal subgroup and an action, and the decomposition of a finite group into simple constituents. As a first physical payoff we prove the crystallographic restriction theorem: a crystal lattice admits only two-, three-, four- and sixfold rotation axes.</p> </div> <div class="actions"> <a class="btn btn-primary" href="/symmetries/lectures/2/problems">
+    </script><link rel="stylesheet" href="/symmetries/_astro/about.BfPgBeWz.css"></head> <body> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/">Symmetries <span>· in Physics</span></a> <nav class="site-nav"> <a href="/symmetries/" aria-current="page"> Lectures </a><a href="/symmetries/problems"> Problems </a><a href="/symmetries/review"> Review </a><a href="/symmetries/ai"> Study with AI </a><a href="/symmetries/about"> About </a><a href="/symmetries/search"> Search </a> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" data-pagefind-body>  <header class="lecture-head"> <div class="eyebrow">Lecture 2</div> <h1>Structure of groups, and a first look at crystallographic groups</h1> <div class="objectives"> <h2>What this lecture does</h2> <p>We learn to compare groups by structure-preserving maps and to take groups apart: homomorphisms and their kernels, conjugacy and its geometric meaning, quotient groups and the first isomorphism theorem, direct products, and the construction of semidirect products from a normal subgroup and an action, and the decomposition of a finite group into simple constituents. As a first physical payoff we prove the crystallographic restriction theorem: a crystal lattice admits only two-, three-, four- and sixfold rotation axes.</p> </div> <div class="actions"> <a class="btn btn-primary" href="/symmetries/lectures/2/problems">
 Problems · 8 </a> <a class="btn" href="/symmetries/pdfs/lecture-2.pdf">Notes (PDF)</a> <a class="btn" href="/symmetries/pdfs/exercises-2.pdf">Sheet (PDF)</a> </div> </header> <div class="lecture-layout"> <article class="notes">   <section class="section-block" id="sec:02:hom"> <h1>Homomorphisms</h1> <p>Lecture 1 declared two groups “the same” when a bijection matches their multiplication tables. Far more common, and at least as useful, are maps that preserve multiplication <em>without</em> being bijective: they compress a group onto a smaller one, retaining some structure and discarding the rest.</p>
 <div class="definition">
 <p><b class="env-head">Definition 2.1 <span class="env-note">(Homomorphism)</span>.</b> <span id="def:02:hom" data-label="def:02:hom"></span> A map <span class="katex"><span class="katex-mathml" data-pagefind-ignore><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi><mspace></mspace><mspace width="0.1111em"/><mo lspace="0em" rspace="0.17em"></mo><mtext> ⁣</mtext><mo lspace="0em" rspace="0em">:</mo><mspace width="0.3333em"/><mi>G</mi><mo>→</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">\varphi\colon G\to H</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">φ</span><span class="mspace nobreak"></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mpunct"></span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mrel">:</span></span><span class="mspace" style="margin-right:0.3333em;"></span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0813em;">H</span></span></span></span> between groups is a <em>homomorphism</em> if <span class="katex-display"><span class="katex"><span class="katex-mathml" data-pagefind-ignore><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>φ</mi><mo stretchy="false">(</mo><msub><mi>g</mi><mn>1</mn></msub><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mi>φ</mi><mo stretchy="false">(</mo><msub><mi>g</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mtext> </mtext><mi>φ</mi><mo stretchy="false">(</mo><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mspace width="2em"/><mtext>for all </mtext><msub><mi>g</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>g</mi><mn>2</mn></msub><mo>∈</mo><mi>G</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\varphi(g_1g_2)=\varphi(g_1)\,\varphi(g_2)
@@ -398,112 +398,10 @@ c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></spa
 Worked in the tutorial:
 <a href="/symmetries/lectures/2/problems">
 Exercise Sheet 2</a>.
-</p> </section> <section class="quiz" id="self-check"><h1>Self-check</h1><p class="quiz-lede">5 questions on the ideas this lecture is most often
+</p> </section> <section class="quiz" id="self-check" data-quiz data-lecture="2"><h1>Self-check</h1><p class="quiz-lede">5 questions on the ideas this lecture is most often
       misread on. Answer before you look — a wrong answer you thought about is
       worth more than a right one you guessed.
-</p><div class="quiz-q" data-question data-id="kernel-normal" data-type="choice" data-answer="0" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">1</span>What special property does the kernel of any group homomorphism have?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>It is normal</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>It is always trivial</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>It contains every conjugacy class</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Compare φ(gkg⁻¹) with φ(k).</p><div class="quiz-why" data-why hidden>Conjugating a kernel element remains in the kernel, so the kernel is normal.</div></div><div class="quiz-q" data-question data-id="crystal-orders" data-type="choice" data-answer="2" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">2</span>Which rotational order is forbidden for an exact periodic lattice?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>3</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>4</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>5</span></button></li><li><button class="quiz-option" type="button" data-option="3"><span class="mark">D</span><span>6</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Recall the crystallographic restriction list.</p><div class="quiz-why" data-why hidden>Periodic lattices permit orders 2, 3, 4, and 6, but not 5.</div></div><div class="quiz-q" data-question data-id="lattice-translation" data-type="choice" data-answer="0" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">3</span>Does translation by a primitive vector preserve the lattice?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Yes, exactly</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>Only the origin</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>No lattice point</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>A lattice is closed under integer combinations of its primitive vectors.</p><div class="quiz-why" data-why hidden>Adding a primitive vector just changes one integer coefficient by one.</div></div><div class="quiz-q" data-question data-id="lattice-fourfold" data-type="choice" data-answer="0" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">4</span>Which lattice can admit a 90° rotational symmetry?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Square</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>Generic oblique</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>No two-dimensional lattice</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>A 90° turn has order four.</p><div class="quiz-why" data-why hidden>The square lattice realises the allowed four-fold crystallographic axis.</div></div><div class="quiz-q" data-question data-id="lattice-fivefold" data-type="choice" data-answer="2" data-tolerance="0"><p class="quiz-stem"><span class="quiz-n">5</span>Can an exact translation lattice have a five-fold rotation axis?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Yes, always</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>Only in three dimensions</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>No</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Use the crystallographic restriction theorem.</p><div class="quiz-why" data-why hidden>Periodic lattices allow rotational orders 2, 3, 4, and 6, not 5.</div></div><p class="quiz-score" data-score aria-live="polite"></p></section><script>(function(){const lectureId = 2;
-
-  (function () {
-    var key = "symmetries-selfcheck-" + lectureId;
-    var store = {};
-    try { store = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
-
-    var questions = document.querySelectorAll("[data-question]");
-    var score = document.querySelector("[data-score]");
-    var answered = 0;
-    var right = 0;
-
-    function save() {
-      try { localStorage.setItem(key, JSON.stringify(store)); } catch (e) {}
-    }
-
-    function tally() {
-      if (!score) return;
-      score.textContent = answered
-        ? right + " of " + answered + " answered correctly."
-        : "";
-    }
-
-    /**
-     * A typed numeric answer is compared within the question's own tolerance.
-     * A tolerance of 0 means exactly right, which is what a group order or a
-     * multiplicity wants; anything with a fractional value carries a real one.
-     */
-    function numericMatches(typed, expected, tolerance) {
-      var value = Number(String(typed).trim().replace(/[−–—]/g, "-").replace(/\s+/g, ""));
-      if (!isFinite(value)) return null;
-      return Math.abs(value - expected) <= (tolerance || 0);
-    }
-
-    questions.forEach(function (question) {
-      var why = question.querySelector("[data-why]");
-      var hint = question.querySelector("[data-hint]");
-      var hintBtn = question.querySelector("[data-hint-btn]");
-      var expected = Number(question.dataset.answer);
-      var tolerance = Number(question.dataset.tolerance);
-      var usedHint = false;
-
-      if (hintBtn) {
-        hintBtn.addEventListener("click", function () {
-          if (hint) hint.hidden = false;
-          usedHint = true;
-          hintBtn.disabled = true;
-        });
-      }
-
-      function settle(correct) {
-        if (question.dataset.done) return;
-        question.dataset.done = "yes";
-        answered += 1;
-        if (correct) right += 1;
-        if (why) why.hidden = false;
-        if (hintBtn) hintBtn.disabled = true;
-        question.classList.add(correct ? "is-right" : "is-wrong");
-        store[question.dataset.id] = { correct: correct, hinted: usedHint };
-        save();
-        tally();
-      }
-
-      if (question.dataset.type === "choice") {
-        var options = question.querySelectorAll("[data-option]");
-        options.forEach(function (option) {
-          option.addEventListener("click", function () {
-            if (question.dataset.done) return;
-            var chosen = Number(option.dataset.option);
-            options.forEach(function (other) {
-              other.disabled = true;
-              var index = Number(other.dataset.option);
-              if (index === expected) other.classList.add("is-right");
-              else if (index === chosen) other.classList.add("is-wrong");
-            });
-            settle(chosen === expected);
-          });
-        });
-      } else {
-        var input = question.querySelector("[data-numeric]");
-        var submit = question.querySelector("[data-submit]");
-        var check = function () {
-          if (question.dataset.done || !input) return;
-          var verdict = numericMatches(input.value, expected, tolerance);
-          if (verdict === null) {
-            input.setAttribute("aria-invalid", "true");
-            return;
-          }
-          input.removeAttribute("aria-invalid");
-          input.disabled = true;
-          if (submit) submit.disabled = true;
-          settle(verdict);
-        };
-        if (submit) submit.addEventListener("click", check);
-        if (input) {
-          input.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") { event.preventDefault(); check(); }
-          });
-        }
-      }
-    });
-  })();
-})();</script> <section class="references" id="references"> <h2>Further reading</h2> <p>Armstrong, <em>Groups and Symmetry</em> (cosets, quotient groups, direct and semidirect products); Jones, <em>Groups, Representations and Physics</em>, Pt. 1; Tung, <em>Group Theory in Physics</em>, Ch. 1.</p> </section> </article> <aside class="lecture-rail"> <nav aria-label="Contents"> <h2>Contents</h2> <ol>  <li> <a href="#sec:02:hom">Homomorphisms</a> </li>  <li> <a href="#sec:02:conjugacy">Conjugacy</a> </li>  <li> <a href="#sec:02:quotients">Normal subgroups and quotient groups</a> </li>  <li> <a href="#sec:02:firstiso">The first isomorphism theorem</a> </li>  <li> <a href="#sec:02:products">Direct products</a> </li> <li class="sub"> <a href="#semidirect-products">Semidirect products</a> </li> <li> <a href="#sec:02:simple">Simple groups and composition series</a> </li>  <li> <a href="#sec:02:crystals">A first look at crystallographic groups</a> </li> <li class="sub"> <a href="#the-classification-logic">The classification logic</a> </li> <li><a href="#summary">Summary</a></li> <li><a href="#self-check">Self-check</a></li> </ol> </nav> </aside> </div> <script>
+</p><div class="quiz-q" data-question data-id="kernel-normal" data-type="choice" data-answer="0" data-tolerance="0" data-concepts="homomorphisms-quotients"><p class="quiz-stem"><span class="quiz-n">1</span>What special property does the kernel of any group homomorphism have?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>It is normal</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>It is always trivial</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>It contains every conjugacy class</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Compare φ(gkg⁻¹) with φ(k).</p><div class="quiz-why" data-why hidden>Conjugating a kernel element remains in the kernel, so the kernel is normal.</div></div><div class="quiz-q" data-question data-id="crystal-orders" data-type="choice" data-answer="2" data-tolerance="0" data-concepts="crystallographic-restriction"><p class="quiz-stem"><span class="quiz-n">2</span>Which rotational order is forbidden for an exact periodic lattice?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>3</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>4</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>5</span></button></li><li><button class="quiz-option" type="button" data-option="3"><span class="mark">D</span><span>6</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Recall the crystallographic restriction list.</p><div class="quiz-why" data-why hidden>Periodic lattices permit orders 2, 3, 4, and 6, but not 5.</div></div><div class="quiz-q" data-question data-id="lattice-translation" data-type="choice" data-answer="0" data-tolerance="0" data-concepts="crystallographic-restriction"><p class="quiz-stem"><span class="quiz-n">3</span>Does translation by a primitive vector preserve the lattice?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Yes, exactly</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>Only the origin</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>No lattice point</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>A lattice is closed under integer combinations of its primitive vectors.</p><div class="quiz-why" data-why hidden>Adding a primitive vector just changes one integer coefficient by one.</div></div><div class="quiz-q" data-question data-id="lattice-fourfold" data-type="choice" data-answer="0" data-tolerance="0" data-concepts="crystallographic-restriction"><p class="quiz-stem"><span class="quiz-n">4</span>Which lattice can admit a 90° rotational symmetry?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Square</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>Generic oblique</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>No two-dimensional lattice</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>A 90° turn has order four.</p><div class="quiz-why" data-why hidden>The square lattice realises the allowed four-fold crystallographic axis.</div></div><div class="quiz-q" data-question data-id="lattice-fivefold" data-type="choice" data-answer="2" data-tolerance="0" data-concepts="crystallographic-restriction"><p class="quiz-stem"><span class="quiz-n">5</span>Can an exact translation lattice have a five-fold rotation axis?</p><ul class="quiz-options"><li><button class="quiz-option" type="button" data-option="0"><span class="mark">A</span><span>Yes, always</span></button></li><li><button class="quiz-option" type="button" data-option="1"><span class="mark">B</span><span>Only in three dimensions</span></button></li><li><button class="quiz-option" type="button" data-option="2"><span class="mark">C</span><span>No</span></button></li></ul><div class="quiz-tools"><button class="quiz-hint-btn" type="button" data-hint-btn>Hint</button></div><p class="quiz-hint" data-hint hidden>Use the crystallographic restriction theorem.</p><div class="quiz-why" data-why hidden>Periodic lattices allow rotational orders 2, 3, 4, and 6, not 5.</div></div><p class="quiz-score" data-score aria-live="polite"></p></section><script type="module" src="/symmetries/_astro/Quiz.astro_astro_type_script_index_0_lang.Dv46URGz.js"></script> <section class="references" id="references"> <h2>Further reading</h2> <p>Armstrong, <em>Groups and Symmetry</em> (cosets, quotient groups, direct and semidirect products); Jones, <em>Groups, Representations and Physics</em>, Pt. 1; Tung, <em>Group Theory in Physics</em>, Ch. 1.</p> </section> </article> <aside class="lecture-rail"> <nav aria-label="Contents"> <h2>Contents</h2> <ol>  <li> <a href="#sec:02:hom">Homomorphisms</a> </li>  <li> <a href="#sec:02:conjugacy">Conjugacy</a> </li>  <li> <a href="#sec:02:quotients">Normal subgroups and quotient groups</a> </li>  <li> <a href="#sec:02:firstiso">The first isomorphism theorem</a> </li>  <li> <a href="#sec:02:products">Direct products</a> </li> <li class="sub"> <a href="#semidirect-products">Semidirect products</a> </li> <li> <a href="#sec:02:simple">Simple groups and composition series</a> </li>  <li> <a href="#sec:02:crystals">A first look at crystallographic groups</a> </li> <li class="sub"> <a href="#the-classification-logic">The classification logic</a> </li> <li><a href="#summary">Summary</a></li> <li><a href="#self-check">Self-check</a></li> </ol> </nav> </aside> </div> <script>
     // Highlight the section currently in view in the contents rail.
     (function () {
       var links = {};

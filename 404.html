@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Not found · Symmetries in Physics</title><meta name="description" content="That page is not here."><link rel="icon" href="/symmetries/favicon.svg"><script>
+      // Applied before first paint, so the page never flashes the wrong theme.
+      (function () {
+        try {
+          var t = localStorage.getItem("symmetries-theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/symmetries/_astro/about.BfPgBeWz.css"></head> <body> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/">Symmetries <span>· in Physics</span></a> <nav class="site-nav"> <a href="/symmetries/"> Lectures </a><a href="/symmetries/problems"> Problems </a><a href="/symmetries/review"> Review </a><a href="/symmetries/ai"> Study with AI </a><a href="/symmetries/about"> About </a><a href="/symmetries/search"> Search </a> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" data-pagefind-body>  <header class="page-head"> <div class="eyebrow">404</div> <h1>That page is not here</h1> <p class="lede">
+The link may be from an earlier run of the course, or the lecture may not
+      have been released yet. Nothing is hidden behind a login — if a lecture
+      has no page, it has not been published.
+</p> <div class="actions"> <a class="btn btn-primary" href="/symmetries/">All lectures</a> <a class="btn" href="/symmetries/problems">Exercise sheets</a> <a class="btn" href="/symmetries/search">Search the notes</a> </div> </header>  </main> <footer class="site-footer"> <div class="wrap"> <p> Symmetries in Physics — Finite Groups, Lie Groups, and Their Applications.
+
+Worked solutions are done in the tutorials and are not published here.
+</p> </div> </footer> <script>
+      document.querySelector("[data-theme-toggle]")?.addEventListener("click", function () {
+        var root = document.documentElement;
+        var current = root.getAttribute("data-theme");
+        if (!current) {
+          current = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        var next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("symmetries-theme", next); } catch (e) {}
+      });
+    </script> </body> </html>
