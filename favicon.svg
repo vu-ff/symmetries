@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Symmetries in Physics">
+  <rect width="32" height="32" rx="7" fill="#78003f"/>
+  <!-- The equilateral triangle and its centroid: the first symmetry group the
+       course meets, and the subject of the notes' own Figure 1.1. A single
+       three-fold figure still reads at 16px, where the three mirror axes
+       would not. -->
+  <g stroke="#fbf4f7" stroke-width="2.4" stroke-linecap="round"
+     stroke-linejoin="round" fill="none">
+    <path d="M16 7 L24.5 23 L7.5 23 Z"/>
+  </g>
+  <circle cx="16" cy="17.7" r="2.1" fill="#fbf4f7"/>
+</svg>

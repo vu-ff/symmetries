@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>About · Symmetries in Physics</title><meta name="description" content="About this course companion."><link rel="icon" href="/symmetries/favicon.svg"><script>
+      // Applied before first paint, so the page never flashes the wrong theme.
+      (function () {
+        try {
+          var t = localStorage.getItem("symmetries-theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/symmetries/_astro/about.C9wZKfTh.css"></head> <body> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/">Symmetries <span>· in Physics</span></a> <nav class="site-nav"> <a href="/symmetries/"> Lectures </a><a href="/symmetries/problems"> Problems </a><a href="/symmetries/ai"> Study with AI </a><a href="/symmetries/about" aria-current="page"> About </a><a href="/symmetries/search"> Search </a> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" data-pagefind-body>  <header class="page-head"> <h1>About this site</h1> <p class="lede">
+The companion to Symmetries in Physics — finite groups, lie groups, and their applications.
+</p> </header> <div class="prose"> <h2>What is here</h2> <p> 15 lectures with 50 definitions, 161 named
+      results, 140 proofs, 73 worked examples and 16 figures,
+      plus 96 problems across 15 exercise sheets. Everything
+      is generated from the same LaTeX source as the printed notes, so the site and
+      the PDFs cannot drift apart: a definition here is the same object, with the
+      same number, as the definition in the PDF.
+</p> <h2>Questions and solutions</h2> <p>
+The course's LaTeX has two kinds of material and nothing in between: an
+<em>exercise</em>, which is a question, and a <em>solution</em>, which is the
+      full worked method. The style package's <code>solutions</code> option is what
+      separates the instructor booklet from the student one, and this site is
+      always the student one. Worked solutions are done in the tutorial, which is
+      where the learning in them actually happens.
+</p> <p>
+They are not merely hidden here. Every solution is deleted from the source
+      text before it reaches the converter, the public sheet PDFs are recompiled
+      as the questions-only variant rather than copied from the repository, and
+      the finished site and every PDF in it are searched for solution material
+      before anything can be published. A solution cannot reach this site by
+      accident.
+</p> <p>
+So: work the sheet before its tutorial, and bring what you could not
+      finish. A solution you read before trying tells you nothing at all.
+</p> <h2>Your progress</h2> <p>
+There is no account, no login, and nothing is sent anywhere. Your theme
+      choice is remembered in your own browser and nothing else is stored.
+</p> <h2>Found a mistake?</h2> <p>
+Please report it. Corrections during a course's first run are genuinely
+      valuable — bring it to a lecture or tutorial and it will be fixed at source
+      and republished.
+</p> <h2>Colophon</h2> <p>
+Built as a static site from LaTeX. Pandoc preserves the notes' own definition,
+      theorem, example and remark structure; the printed numbering and every
+      cross-reference are recovered from the source with the same counters the
+      book class uses; KaTeX renders the mathematics at build time using the
+      course's own notation macros, translated automatically from the same style
+      file the PDFs load; and every figure is the same TikZ drawing as in the PDF,
+      compiled to SVG rather than screenshotted. The notes are set in Charter, the
+      face the printed notes use. No tracking, no cookies, no third-party requests.
+</p> <p><a href="/symmetries/">← Back to the lectures</a></p> </div>  </main> <footer class="site-footer"> <div class="wrap"> <p> Symmetries in Physics — Finite Groups, Lie Groups, and Their Applications.
+
+Worked solutions are done in the tutorials and are not published here.
+</p> </div> </footer> <script>
+      document.querySelector("[data-theme-toggle]")?.addEventListener("click", function () {
+        var root = document.documentElement;
+        var current = root.getAttribute("data-theme");
+        if (!current) {
+          current = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        var next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("symmetries-theme", next); } catch (e) {}
+      });
+    </script> </body> </html>
