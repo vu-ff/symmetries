@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Search · Symmetries in Physics</title><meta name="description" content="Search the notes, the worked examples and every problem."><link rel="icon" href="/symmetries/favicon.svg"><link rel="alternate" hreflang="lt" href="/symmetries/search"><link rel="alternate" hreflang="en" href="/symmetries/en/search"><script>
+      // Applied before first paint, so the page never flashes the wrong theme.
+      (function () {
+        try {
+          var t = localStorage.getItem("symmetries-theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/symmetries/_astro/about.CmHyC16s.css">
+<style>:root{--pagefind-ui-primary: var(--accent);--pagefind-ui-text: var(--text);--pagefind-ui-background: var(--bg);--pagefind-ui-border: var(--rule);--pagefind-ui-tag: var(--bg-sunken);--pagefind-ui-border-radius: 8px;--pagefind-ui-font: var(--font-ui)}
+</style></head> <body> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/en/"> Symmetries <span>· in Physics</span> </a> <nav class="site-nav"> <a href="/symmetries/en/"> Lectures </a><a href="/symmetries/en/problems"> Problems </a><a href="/symmetries/en/review"> Review </a><a href="/symmetries/en/ai"> Study with AI </a><a href="/symmetries/en/about"> About </a><a href="/symmetries/en/search" aria-current="page"> Search </a> <div class="lang-switch" role="group" aria-label="Language"> <a href="/symmetries/search" hreflang="lt" lang="lt"> LT <span class="lang-full">Lietuvių</span> </a><a href="/symmetries/en/search" hreflang="en" lang="en" aria-current="true"> EN <span class="lang-full">English</span> </a> </div> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" data-pagefind-body>  <header class="page-head"> <h1>Search</h1> <p class="lede">Search the notes, the worked examples and every problem.</p> </header> <div id="search" data-pagefind-ignore></div> <link rel="stylesheet" href="/symmetries/_pagefind/pagefind-ui.css"> <script>(function(){const bundlePath = "/symmetries/_pagefind/";
+const translations = {};
+
+    window.addEventListener("DOMContentLoaded", function () {
+      var script = document.createElement("script");
+      script.src = bundlePath + "pagefind-ui.js";
+      script.onload = function () {
+        new window.PagefindUI({
+          element: "#search", bundlePath: bundlePath,
+          showSubResults: true, showImages: false,
+          translations: translations,
+        });
+      };
+      document.head.appendChild(script);
+    });
+  })();</script>   </main> <footer class="site-footer"> <div class="wrap"> <p> Symmetries in Physics — Finite Groups, Lie Groups, and Their Applications.
+  Worked solutions are done in the tutorials and are not published here. </p> </div> </footer> <script>
+      document.querySelector("[data-theme-toggle]")?.addEventListener("click", function () {
+        var root = document.documentElement;
+        var current = root.getAttribute("data-theme");
+        if (!current) {
+          current = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        var next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("symmetries-theme", next); } catch (e) {}
+      });
+    </script> </body> </html>
