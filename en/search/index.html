@@ -1,4 +1,26 @@
 <!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Search · Symmetries in Physics</title><meta name="description" content="Search the notes, the worked examples and every problem."><link rel="icon" href="/symmetries/favicon.svg"><link rel="alternate" hreflang="lt" href="/symmetries/search"><link rel="alternate" hreflang="en" href="/symmetries/en/search"><script>
+      // `symmetriesActivity()` notes today in this browser's activity record;
+      // the self-check, the problem marks, the goals, the laboratories and the
+      // review call it when the reader does something, and My progress draws
+      // the week from it.
+      window.symmetriesActivity = function () {
+        try {
+          var key = "symmetries-activity", now = new Date();
+          var day = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0")
+            + "-" + String(now.getDate()).padStart(2, "0");
+          var log = JSON.parse(localStorage.getItem(key) || "{}") || {};
+          log[day] = (log[day] || 0) + 1;
+          // Ninety days is plenty for a week view and keeps the record small.
+          var cutoff = new Date(now.getTime() - 90 * 864e5).toISOString().slice(0, 10);
+          Object.keys(log).forEach(function (d) { if (d < cutoff) delete log[d]; });
+          localStorage.setItem(key, JSON.stringify(log));
+        } catch (e) {}
+      };
+      // "Forget me" on My progress (scripts/greeting.ts) signals every other
+      // open tab to reload, so none writes back the records it holds in memory.
+      window.addEventListener("storage", function (event) {
+        if (event.key === "symmetries-forget" && event.newValue) location.reload();
+      });
       // Applied before first paint, so the page never flashes the wrong theme.
       (function () {
         try {
@@ -6,7 +28,7 @@
           if (t) document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
-    </script><link rel="stylesheet" href="/symmetries/_astro/about.DOGYuoMc.css">
+    </script><link rel="stylesheet" href="/symmetries/_astro/about.BgfvNRQo.css">
 <style>:root{--pagefind-ui-primary: var(--accent);--pagefind-ui-text: var(--text);--pagefind-ui-background: var(--bg);--pagefind-ui-border: var(--rule);--pagefind-ui-tag: var(--bg-sunken);--pagefind-ui-border-radius: 8px;--pagefind-ui-font: var(--font-ui)}
 </style></head> <body>   <div class="board" aria-hidden="true"><div class="board-ink"></div></div> <script>
       // Fade the board out over the first 60% of a screen of scrolling.
@@ -22,7 +44,8 @@
         }, { passive: true });
         update();
       })();
-    </script> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/en/"> Symmetries <span>· in Physics</span> </a> <nav class="site-nav"> <a href="/symmetries/en/"> Lectures </a><a href="/symmetries/en/problems"> Problems </a><a href="/symmetries/en/review"> Review </a><a href="/symmetries/en/ai"> Study with AI </a><a href="/symmetries/en/literature"> Literature </a><a href="/symmetries/en/about"> About </a><a href="/symmetries/en/search" aria-current="page"> Search </a> <div class="lang-switch" role="group" aria-label="Language"> <a href="/symmetries/search" hreflang="lt" lang="lt"> LT <span class="lang-full">Lietuvių</span> </a><a href="/symmetries/en/search" hreflang="en" lang="en" aria-current="true"> EN <span class="lang-full">English</span> </a> </div> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" id="main" data-pagefind-body="true">  <header class="page-head"> <h1>Search</h1> <p class="lede">Search the notes, the worked examples and every problem.</p> </header> <div id="search" data-pagefind-ignore></div> <link rel="stylesheet" href="/symmetries/_pagefind/pagefind-ui.css"> <script>(function(){const bundlePath = "/symmetries/_pagefind/";
+    </script> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/en/"> Symmetries <span>· in Physics</span> </a> <nav class="site-nav"> <a href="/symmetries/en/"> Lectures </a><a href="/symmetries/en/problems"> Problems </a><a href="/symmetries/en/review"> Review </a><a href="/symmetries/en/ai"> Study with AI </a><a href="/symmetries/en/literature"> Literature </a><a href="/symmetries/en/about"> About </a><a href="/symmetries/en/search" aria-current="page"> Search </a> <!-- My progress: an icon beside the language switch and the theme
+               toggle, where an eighth text link would not fit. --> <a class="nav-me" href="/symmetries/en/progress" title="My progress"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M3 3v18h18"></path><path d="m7 15 4-4 3 3 5-6"></path> </svg> <span class="nav-me-label">My progress</span> </a> <div class="lang-switch" role="group" aria-label="Language"> <a href="/symmetries/search" hreflang="lt" lang="lt"> LT <span class="lang-full">Lietuvių</span> </a><a href="/symmetries/en/search" hreflang="en" lang="en" aria-current="true"> EN <span class="lang-full">English</span> </a> </div> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" id="main" data-pagefind-body="true">  <header class="page-head"> <h1>Search</h1> <p class="lede">Search the notes, the worked examples and every problem.</p> </header> <div id="search" data-pagefind-ignore></div> <link rel="stylesheet" href="/symmetries/_pagefind/pagefind-ui.css"> <script>(function(){const bundlePath = "/symmetries/_pagefind/";
 const translations = {};
 
     window.addEventListener("DOMContentLoaded", function () {
