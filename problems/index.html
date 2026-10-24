@@ -1,97 +1,50 @@
-<!DOCTYPE html><html lang="lt"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Uždavinių lapai · Simetrija fizikoje</title><meta name="description" content="Visi uždavinių lapai pagal paskaitas."><link rel="icon" href="/symmetries/favicon.svg"><link rel="alternate" hreflang="lt" href="/symmetries/problems"><link rel="alternate" hreflang="en" href="/symmetries/en/problems"><script>
-      // `symmetriesActivity()` notes today in this browser's activity record;
-      // the self-check, the problem marks, the goals, the laboratories and the
-      // review call it when the reader does something, and My progress draws
-      // the week from it.
-      window.symmetriesActivity = function () {
-        try {
-          var key = "symmetries-activity", now = new Date();
-          var day = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0")
-            + "-" + String(now.getDate()).padStart(2, "0");
-          var log = JSON.parse(localStorage.getItem(key) || "{}") || {};
-          log[day] = (log[day] || 0) + 1;
-          // Ninety days is plenty for a week view and keeps the record small.
-          var cutoff = new Date(now.getTime() - 90 * 864e5).toISOString().slice(0, 10);
-          Object.keys(log).forEach(function (d) { if (d < cutoff) delete log[d]; });
-          localStorage.setItem(key, JSON.stringify(log));
-        } catch (e) {}
-      };
-      // "Forget me" on My progress (scripts/greeting.ts) signals every other
-      // open tab to reload, so none writes back the records it holds in memory.
-      window.addEventListener("storage", function (event) {
-        if (event.key === "symmetries-forget" && event.newValue) location.reload();
-      });
-      // Applied before first paint, so the page never flashes the wrong theme.
-      (function () {
-        try {
-          var t = localStorage.getItem("symmetries-theme");
-          if (t) document.documentElement.setAttribute("data-theme", t);
-        } catch (e) {}
-      })();
-    </script><link rel="stylesheet" href="/symmetries/_astro/about.BgfvNRQo.css"></head> <body>   <div class="board" aria-hidden="true"><div class="board-ink"></div></div> <script>
-      // Fade the board out over the first 60% of a screen of scrolling.
-      (function () {
-        var board = document.querySelector(".board"), frame = 0;
-        if (!board) return;
-        function update() {
-          frame = 0;
-          board.style.opacity = String(Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.6)));
-        }
-        window.addEventListener("scroll", function () {
-          if (!frame) frame = requestAnimationFrame(update);
-        }, { passive: true });
-        update();
-      })();
-    </script> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/"> Simetrija <span>· fizikoje</span> </a> <nav class="site-nav"> <a href="/symmetries/"> Paskaitos </a><a href="/symmetries/problems" aria-current="page"> Uždaviniai </a><a href="/symmetries/review"> Kartojimas </a><a href="/symmetries/ai"> Mokytis su DI </a><a href="/symmetries/literature"> Literatūra </a><a href="/symmetries/about"> Apie </a><a href="/symmetries/search"> Paieška </a> <!-- My progress: an icon beside the language switch and the theme
-               toggle, where an eighth text link would not fit. --> <a class="nav-me" href="/symmetries/progress" title="Mano pažanga"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M3 3v18h18"></path><path d="m7 15 4-4 3 3 5-6"></path> </svg> <span class="nav-me-label">Mano pažanga</span> </a> <div class="lang-switch" role="group" aria-label="Kalba"> <a href="/symmetries/problems" hreflang="lt" lang="lt" aria-current="true"> LT <span class="lang-full">Lietuvių</span> </a><a href="/symmetries/en/problems" hreflang="en" lang="en"> EN <span class="lang-full">English</span> </a> </div> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Perjungti šviesią ir tamsią temą"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" id="main" data-pagefind-body="true">  <header class="page-head"> <h1>Uždavinių lapai</h1> <p class="lede">48 uždaviniai 8 lapuose, po vieną kiekvienai paskaitai. Spręskite lapą prieš jo pratybas: sprendimai nagrinėjami ten, o jie verti kur kas daugiau, kai jau esate pabandę patys.</p> </header> <section class="revisit-list" data-revisit data-pagefind-ignore hidden> <h2>Grįžti vėliau</h2> <p>Uždaviniai, kuriuos pažymėjote „Grįžti vėliau“, iš visų lapų. Žymės saugomos tik šioje naršyklėje.</p> <ul class="revisit-links" data-revisit-links></ul> </section> <ul class="lecture-list"> <li> <a class="lecture-card" href="/symmetries/lectures/1/problems#sheet-1"> <div class="lecture-card-num">Lapas<b>1</b></div> <div class="lecture-card-body"> <h3>Grupės, pavyzdžiai ir Lagranžo teorema</h3> <p>8 uždaviniai · 1 paskaita</p> <p class="lecture-card-progress" data-sheet-progress data-pagefind-ignore hidden data-sheet="1" data-total="8"></p> </div> <div class="lecture-card-go">→</div> </a> </li><li> <a class="lecture-card" href="/symmetries/lectures/2/problems#sheet-2"> <div class="lecture-card-num">Lapas<b>2</b></div> <div class="lecture-card-body"> <h3>Grupių struktūra, faktorgrupės ir sandaugos</h3> <p>7 uždaviniai · 2 paskaita</p> <p class="lecture-card-progress" data-sheet-progress data-pagefind-ignore hidden data-sheet="2" data-total="7"></p> </div> <div class="lecture-card-go">→</div> </a> </li><li> <a class="lecture-card" href="/symmetries/lectures/3/problems#sheet-3"> <div class="lecture-card-num">Lapas<b>3</b></div> <div class="lecture-card-body"> <h3>Įvaizdžiai ir jų ekvivalentumas</h3> <p>6 uždaviniai · 3 paskaita</p> <p class="lecture-card-progress" data-sheet-progress data-pagefind-ignore hidden data-sheet="3" data-total="6"></p> </div> <div class="lecture-card-go">→</div> </a> </li><li> <a class="lecture-card" href="/symmetries/lectures/4/problems#sheet-4"> <div class="lecture-card-num">Lapas<b>4</b></div> <div class="lecture-card-body"> <h3>Neredukuojamumas, vidurkinimas ir Šūro lema</h3> <p>6 uždaviniai · 4 paskaita</p> <p class="lecture-card-progress" data-sheet-progress data-pagefind-ignore hidden data-sheet="4" data-total="6"></p> </div> <div class="lecture-card-go">→</div> </a> </li><li> <a class="lecture-card" href="/symmetries/lectures/5/problems#sheet-5"> <div class="lecture-card-num">Lapas<b>5</b></div> <div class="lecture-card-body"> <h3>Charakteriai ir charakterių lentelės</h3> <p>4 uždaviniai · 5 paskaita</p> <p class="lecture-card-progress" data-sheet-progress data-pagefind-ignore hidden data-sheet="5" data-total="4"></p> </div> <div class="lecture-card-go">→</div> </a> </li><li> <a class="lecture-card" href="/symmetries/lectures/6/problems#sheet-6"> <div class="lecture-card-num">Lapas<b>6</b></div> <div class="lecture-card-body"> <h3>Simetrija, projektoriai ir išsigimimas</h3> <p>5 uždaviniai · 6 paskaita</p> <p class="lecture-card-progress" data-sheet-progress data-pagefind-ignore hidden data-sheet="6" data-total="5"></p> </div> <div class="lecture-card-go">→</div> </a> </li><li> <a class="lecture-card" href="/symmetries/lectures/7/problems#sheet-7"> <div class="lecture-card-num">Lapas<b>7</b></div> <div class="lecture-card-body"> <h3>Molekuliniai virpesiai</h3> <p>5 uždaviniai · 7 paskaita</p> <p class="lecture-card-progress" data-sheet-progress data-pagefind-ignore hidden data-sheet="7" data-total="5"></p> </div> <div class="lecture-card-go">→</div> </a> </li><li> <a class="lecture-card" href="/symmetries/lectures/8/problems#sheet-8"> <div class="lecture-card-num">Lapas<b>8</b></div> <div class="lecture-card-body"> <h3>Tenzorinės sandaugos, atrankos taisyklės ir lygmenų skilimas</h3> <p>7 uždaviniai · 8 paskaita</p> <p class="lecture-card-progress" data-sheet-progress data-pagefind-ignore hidden data-sheet="8" data-total="7"></p> </div> <div class="lecture-card-go">→</div> </a> </li> </ul> <script>(function(){const problemIndex = {"s1-e1":{"sheet":1,"label":"1 lapas, 1 uždavinys","href":"/symmetries/lectures/1/problems#s1-e1"},"s1-e2":{"sheet":1,"label":"1 lapas, 2 uždavinys","href":"/symmetries/lectures/1/problems#s1-e2"},"s1-e3":{"sheet":1,"label":"1 lapas, 3 uždavinys","href":"/symmetries/lectures/1/problems#s1-e3"},"s1-e4":{"sheet":1,"label":"1 lapas, 4 uždavinys","href":"/symmetries/lectures/1/problems#s1-e4"},"s1-e5":{"sheet":1,"label":"1 lapas, 5 uždavinys","href":"/symmetries/lectures/1/problems#s1-e5"},"s1-e6":{"sheet":1,"label":"1 lapas, 6 uždavinys","href":"/symmetries/lectures/1/problems#s1-e6"},"s1-e7":{"sheet":1,"label":"1 lapas, 7 uždavinys","href":"/symmetries/lectures/1/problems#s1-e7"},"s1-e8":{"sheet":1,"label":"1 lapas, 8 uždavinys","href":"/symmetries/lectures/1/problems#s1-e8"},"s2-e1":{"sheet":2,"label":"2 lapas, 1 uždavinys","href":"/symmetries/lectures/2/problems#s2-e1"},"s2-e2":{"sheet":2,"label":"2 lapas, 2 uždavinys","href":"/symmetries/lectures/2/problems#s2-e2"},"s2-e3":{"sheet":2,"label":"2 lapas, 3 uždavinys","href":"/symmetries/lectures/2/problems#s2-e3"},"s2-e4":{"sheet":2,"label":"2 lapas, 4 uždavinys","href":"/symmetries/lectures/2/problems#s2-e4"},"s2-e5":{"sheet":2,"label":"2 lapas, 5 uždavinys","href":"/symmetries/lectures/2/problems#s2-e5"},"s2-e6":{"sheet":2,"label":"2 lapas, 6 uždavinys","href":"/symmetries/lectures/2/problems#s2-e6"},"s2-e7":{"sheet":2,"label":"2 lapas, 7 uždavinys","href":"/symmetries/lectures/2/problems#s2-e7"},"s3-e1":{"sheet":3,"label":"3 lapas, 1 uždavinys","href":"/symmetries/lectures/3/problems#s3-e1"},"s3-e2":{"sheet":3,"label":"3 lapas, 2 uždavinys","href":"/symmetries/lectures/3/problems#s3-e2"},"s3-e3":{"sheet":3,"label":"3 lapas, 3 uždavinys","href":"/symmetries/lectures/3/problems#s3-e3"},"s3-e4":{"sheet":3,"label":"3 lapas, 4 uždavinys","href":"/symmetries/lectures/3/problems#s3-e4"},"s3-e5":{"sheet":3,"label":"3 lapas, 5 uždavinys","href":"/symmetries/lectures/3/problems#s3-e5"},"s3-e6":{"sheet":3,"label":"3 lapas, 6 uždavinys","href":"/symmetries/lectures/3/problems#s3-e6"},"s4-e1":{"sheet":4,"label":"4 lapas, 1 uždavinys","href":"/symmetries/lectures/4/problems#s4-e1"},"s4-e2":{"sheet":4,"label":"4 lapas, 2 uždavinys","href":"/symmetries/lectures/4/problems#s4-e2"},"s4-e3":{"sheet":4,"label":"4 lapas, 3 uždavinys","href":"/symmetries/lectures/4/problems#s4-e3"},"s4-e4":{"sheet":4,"label":"4 lapas, 4 uždavinys","href":"/symmetries/lectures/4/problems#s4-e4"},"s4-e5":{"sheet":4,"label":"4 lapas, 5 uždavinys","href":"/symmetries/lectures/4/problems#s4-e5"},"s4-e6":{"sheet":4,"label":"4 lapas, 6 uždavinys","href":"/symmetries/lectures/4/problems#s4-e6"},"s5-e1":{"sheet":5,"label":"5 lapas, 1 uždavinys","href":"/symmetries/lectures/5/problems#s5-e1"},"s5-e2":{"sheet":5,"label":"5 lapas, 2 uždavinys","href":"/symmetries/lectures/5/problems#s5-e2"},"s5-e3":{"sheet":5,"label":"5 lapas, 3 uždavinys","href":"/symmetries/lectures/5/problems#s5-e3"},"s5-e4":{"sheet":5,"label":"5 lapas, 4 uždavinys","href":"/symmetries/lectures/5/problems#s5-e4"},"s6-e1":{"sheet":6,"label":"6 lapas, 1 uždavinys","href":"/symmetries/lectures/6/problems#s6-e1"},"s6-e2":{"sheet":6,"label":"6 lapas, 2 uždavinys","href":"/symmetries/lectures/6/problems#s6-e2"},"s6-e3":{"sheet":6,"label":"6 lapas, 3 uždavinys","href":"/symmetries/lectures/6/problems#s6-e3"},"s6-e4":{"sheet":6,"label":"6 lapas, 4 uždavinys","href":"/symmetries/lectures/6/problems#s6-e4"},"s6-e5":{"sheet":6,"label":"6 lapas, 5 uždavinys","href":"/symmetries/lectures/6/problems#s6-e5"},"s7-e1":{"sheet":7,"label":"7 lapas, 1 uždavinys","href":"/symmetries/lectures/7/problems#s7-e1"},"s7-e2":{"sheet":7,"label":"7 lapas, 2 uždavinys","href":"/symmetries/lectures/7/problems#s7-e2"},"s7-e3":{"sheet":7,"label":"7 lapas, 3 uždavinys","href":"/symmetries/lectures/7/problems#s7-e3"},"s7-e4":{"sheet":7,"label":"7 lapas, 4 uždavinys","href":"/symmetries/lectures/7/problems#s7-e4"},"s7-e5":{"sheet":7,"label":"7 lapas, 5 uždavinys","href":"/symmetries/lectures/7/problems#s7-e5"},"s8-e1":{"sheet":8,"label":"8 lapas, 1 uždavinys","href":"/symmetries/lectures/8/problems#s8-e1"},"s8-e2":{"sheet":8,"label":"8 lapas, 2 uždavinys","href":"/symmetries/lectures/8/problems#s8-e2"},"s8-e3":{"sheet":8,"label":"8 lapas, 3 uždavinys","href":"/symmetries/lectures/8/problems#s8-e3"},"s8-e4":{"sheet":8,"label":"8 lapas, 4 uždavinys","href":"/symmetries/lectures/8/problems#s8-e4"},"s8-e5":{"sheet":8,"label":"8 lapas, 5 uždavinys","href":"/symmetries/lectures/8/problems#s8-e5"},"s8-e6":{"sheet":8,"label":"8 lapas, 6 uždavinys","href":"/symmetries/lectures/8/problems#s8-e6"},"s8-e7":{"sheet":8,"label":"8 lapas, 7 uždavinys","href":"/symmetries/lectures/8/problems#s8-e7"}};
-const progress = "Išspręsta {done} iš {total}";
-const progressRevisit = " · grįžti vėliau: {n}";
-
-    // This browser's marks, written on the sheets: a progress line per sheet,
-    // and the problems marked "come back to" gathered from all of them.
-    (function () {
-      var marks = {};
-      try { marks = JSON.parse(localStorage.getItem("symmetries-problems") || "{}") || {}; }
-      catch (e) {}
-
-      document.querySelectorAll("[data-sheet-progress]").forEach(function (line) {
-        var sheet = Number(line.dataset.sheet);
-        var done = 0, revisit = 0;
-        Object.keys(marks).forEach(function (id) {
-          // A mark left behind by a problem the sheet no longer has counts for nothing.
-          if (!problemIndex[id] || problemIndex[id].sheet !== sheet) return;
-          if (marks[id] === "revisit") revisit++;
-          else if (marks[id]) done++;
-        });
-        if (!done && !revisit) return;
-        line.textContent = progress.replace("{done}", done).replace("{total}", line.dataset.total)
-          + (revisit ? progressRevisit.replace("{n}", revisit) : "");
-        line.hidden = false;
-      });
-
-      var ids = Object.keys(problemIndex).filter(function (id) { return marks[id] === "revisit"; });
-      var list = document.querySelector("[data-revisit-links]");
-      if (!ids.length || !list) return;
-      ids.forEach(function (id) {
-        var item = document.createElement("li");
-        var link = document.createElement("a");
-        link.href = problemIndex[id].href;
-        link.textContent = problemIndex[id].label;
-        item.appendChild(link);
-        list.appendChild(item);
-      });
-      document.querySelector("[data-revisit]").hidden = false;
-    })();
-  })();</script>  </main> <footer class="site-footer"> <div class="wrap"> <p> Simetrija fizikoje — Baigtinės grupės, Lie grupės ir jų taikymai.
-  Pilni sprendimai nagrinėjami pratybose ir čia neskelbiami. </p> </div> </footer> <script>
-      document.querySelector("[data-theme-toggle]")?.addEventListener("click", function () {
-        var root = document.documentElement;
-        var current = root.getAttribute("data-theme");
-        if (!current) {
-          current = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-        var next = current === "dark" ? "light" : "dark";
-        root.setAttribute("data-theme", next);
-        try { localStorage.setItem("symmetries-theme", next); } catch (e) {}
-      });
-    </script>  </body> </html>
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="origin">
+<title>Simetrija fizikoje · Symmetries in Physics</title>
+<link rel="canonical" href="https://matfiz.atvira-mokykla.lt/simetrija/problems/">
+<noscript><meta http-equiv="refresh" content="0; url=https://matfiz.atvira-mokykla.lt/simetrija/problems/"></noscript>
+<script>(async function () {
+  var to = "https://matfiz.atvira-mokykla.lt/simetrija/problems/";
+  var anchor = location.hash.slice(1);
+  function go(code) {
+    location.replace(to + location.search + (code ? "#move=" + code + (anchor ? ";" + anchor : "") : (anchor ? "#" + anchor : "")));
+  }
+  function b64(bytes) {
+    var s = "", chunk = 0x8000;
+    for (var i = 0; i < bytes.length; i += chunk) s += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+    return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+  try {
+    var keys = new RegExp("^symmetries-(goals$|activity$|selfcheck-\\d+$|problems$|lab-[a-z]{2}-|review$|concept-evidence-|name$|name-address$)"), data = {}, any = false;
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      if (!key || !keys.test(key)) continue;
+      var raw = localStorage.getItem(key);
+      if (/^symmetries-level-/.test(key)) data[key] = raw;
+      else { try { data[key] = JSON.parse(raw); } catch (e) { continue; } }
+      any = true;
+    }
+    if (!any) return go("");
+    var json = JSON.stringify(data), code = "j" + b64(new TextEncoder().encode(json));
+    if (window.CompressionStream) {
+      try {
+        var stream = new Blob([json]).stream().pipeThrough(new CompressionStream("deflate-raw"));
+        code = "z" + b64(new Uint8Array(await new Response(stream).arrayBuffer()));
+      } catch (e) { /* Older browsers support CompressionStream but not deflate-raw. */ }
+    }
+    // Too long for a link (very rare): go without; the progress code still works by hand.
+    go(code.length > 1500000 ? "" : code);
+  } catch (e) { go(""); }
+})();</script>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:36rem;margin:3rem auto;padding:0 1rem;color:#211a1e}a{color:#78003f}</style>
+</head>
+<body>
+<p>Kursas persikėlė: <a href="https://matfiz.atvira-mokykla.lt/simetrija/problems/">matfiz.atvira-mokykla.lt/simetrija/problems/</a></p>
+<p lang="en">The course has moved: <a href="https://matfiz.atvira-mokykla.lt/simetrija/problems/">matfiz.atvira-mokykla.lt/simetrija/problems/</a></p>
+</body>
+</html>

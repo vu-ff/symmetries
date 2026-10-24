@@ -1,341 +1,50 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Study with AI · Symmetries in Physics</title><meta name="description" content="An AI assistant will explain anything at any hour — and it will just as happily do your thinking for you, which is how people fail exams. Use it the first way: pick a section below and get a prompt that makes it explain, then hand the work back to you."><link rel="icon" href="/symmetries/favicon.svg"><link rel="alternate" hreflang="lt" href="/symmetries/ai"><link rel="alternate" hreflang="en" href="/symmetries/en/ai"><script>
-      // `symmetriesActivity()` notes today in this browser's activity record;
-      // the self-check, the problem marks, the goals, the laboratories and the
-      // review call it when the reader does something, and My progress draws
-      // the week from it.
-      window.symmetriesActivity = function () {
-        try {
-          var key = "symmetries-activity", now = new Date();
-          var day = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0")
-            + "-" + String(now.getDate()).padStart(2, "0");
-          var log = JSON.parse(localStorage.getItem(key) || "{}") || {};
-          log[day] = (log[day] || 0) + 1;
-          // Ninety days is plenty for a week view and keeps the record small.
-          var cutoff = new Date(now.getTime() - 90 * 864e5).toISOString().slice(0, 10);
-          Object.keys(log).forEach(function (d) { if (d < cutoff) delete log[d]; });
-          localStorage.setItem(key, JSON.stringify(log));
-        } catch (e) {}
-      };
-      // "Forget me" on My progress (scripts/greeting.ts) signals every other
-      // open tab to reload, so none writes back the records it holds in memory.
-      window.addEventListener("storage", function (event) {
-        if (event.key === "symmetries-forget" && event.newValue) location.reload();
-      });
-      // Applied before first paint, so the page never flashes the wrong theme.
-      (function () {
-        try {
-          var t = localStorage.getItem("symmetries-theme");
-          if (t) document.documentElement.setAttribute("data-theme", t);
-        } catch (e) {}
-      })();
-    </script><link rel="stylesheet" href="/symmetries/_astro/about.BgfvNRQo.css"></head> <body>   <div class="board" aria-hidden="true"><div class="board-ink"></div></div> <script>
-      // Fade the board out over the first 60% of a screen of scrolling.
-      (function () {
-        var board = document.querySelector(".board"), frame = 0;
-        if (!board) return;
-        function update() {
-          frame = 0;
-          board.style.opacity = String(Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.6)));
-        }
-        window.addEventListener("scroll", function () {
-          if (!frame) frame = requestAnimationFrame(update);
-        }, { passive: true });
-        update();
-      })();
-    </script> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap bar"> <a class="brand" href="/symmetries/en/"> Symmetries <span>· in Physics</span> </a> <nav class="site-nav"> <a href="/symmetries/en/"> Lectures </a><a href="/symmetries/en/problems"> Problems </a><a href="/symmetries/en/review"> Review </a><a href="/symmetries/en/ai" aria-current="page"> Study with AI </a><a href="/symmetries/en/literature"> Literature </a><a href="/symmetries/en/about"> About </a><a href="/symmetries/en/search"> Search </a> <!-- My progress: an icon beside the language switch and the theme
-               toggle, where an eighth text link would not fit. --> <a class="nav-me" href="/symmetries/en/progress" title="My progress"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M3 3v18h18"></path><path d="m7 15 4-4 3 3 5-6"></path> </svg> <span class="nav-me-label">My progress</span> </a> <div class="lang-switch" role="group" aria-label="Language"> <a href="/symmetries/ai" hreflang="lt" lang="lt"> LT <span class="lang-full">Lietuvių</span> </a><a href="/symmetries/en/ai" hreflang="en" lang="en" aria-current="true"> EN <span class="lang-full">English</span> </a> </div> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </header> <main class="wrap" id="main" data-pagefind-body="true">  <header class="page-head"> <h1>Learning with AI, not from it</h1> <p class="lede">An AI assistant will explain anything at any hour — and it will just as happily do your thinking for you, which is how people fail exams. Use it the first way: pick a section below and get a prompt that makes it explain, then hand the work back to you.</p> </header> <section class="ask" id="ask" aria-labelledby="ask-heading" data-ask="{&#34;lectures&#34;:[{&#34;id&#34;:1,&#34;title&#34;:&#34;Groups, examples, and the landscape of finite groups&#34;,&#34;sections&#34;:[&#34;From symmetry operations to the group axioms&#34;,&#34;The definition of a group&#34;,&#34;Examples&#34;,&#34;Groups beyond the finite [self-study]&#34;,&#34;Subgroups&#34;,&#34;Cosets and Lagrange’s theorem&#34;,&#34;Outlook: the landscape of finite groups [self-study]&#34;]},{&#34;id&#34;:2,&#34;title&#34;:&#34;Structure of groups: homomorphisms, quotients, and products&#34;,&#34;sections&#34;:[&#34;Homomorphisms&#34;,&#34;Conjugacy&#34;,&#34;Normal subgroups and quotient groups&#34;,&#34;The first isomorphism theorem&#34;,&#34;Direct products [self-study]&#34;,&#34;Simple groups and composition series [self-study]&#34;]},{&#34;id&#34;:3,&#34;title&#34;:&#34;Linear representations&#34;,&#34;sections&#34;:[&#34;Representations: definition and first examples&#34;,&#34;How symmetries act on functions&#34;,&#34;Equivalence of representations&#34;]},{&#34;id&#34;:4,&#34;title&#34;:&#34;Irreducibility, averaging, and Schur's lemma&#34;,&#34;sections&#34;:[&#34;Invariant subspaces and irreducibility&#34;,&#34;Unitarity: the averaging trick&#34;,&#34;Maschke’s theorem: complete reducibility&#34;,&#34;Worked example: the permutation representation of S₃ [tutorial]&#34;,&#34;Schur’s lemma&#34;]},{&#34;id&#34;:5,&#34;title&#34;:&#34;Characters&#34;,&#34;sections&#34;:[&#34;Characters and class functions&#34;,&#34;The averaging lemma, and orthogonality&#34;,&#34;Characters determine the representation&#34;,&#34;The regular representation&#34;,&#34;Character tables&#34;,&#34;More orthogonality [self-study]&#34;,&#34;Appendix: the regular representation of the ammonia group [self-study]&#34;]},{&#34;id&#34;:6,&#34;title&#34;:&#34;Symmetry, projectors, and degeneracy&#34;,&#34;sections&#34;:[&#34;Symmetry in quantum mechanics&#34;,&#34;Projection operators&#34;,&#34;The block-diagonalisation theorem&#34;,&#34;The triangle, and two stacked triangles&#34;,&#34;Degeneracy, further [self-study]&#34;]},{&#34;id&#34;:7,&#34;title&#34;:&#34;Application I: molecular vibrations&#34;,&#34;sections&#34;:[&#34;Molecules and their point groups&#34;,&#34;Small oscillations and the dynamical matrix&#34;,&#34;The displacement representation&#34;,&#34;Discarding rigid motions&#34;,&#34;Symmetry block-diagonalises D&#34;,&#34;Worked example: ammonia&#34;,&#34;Worked example: water [tutorial]&#34;]},{&#34;id&#34;:8,&#34;title&#34;:&#34;Application II: selection rules and level splitting&#34;,&#34;sections&#34;:[&#34;Tensor products and Clebsch–Gordan decomposition&#34;,&#34;Selection rules and the Wigner–Eckart theorem&#34;,&#34;Infrared and Raman activity&#34;,&#34;Level splitting under symmetry reduction&#34;,&#34;Part I in retrospect [self-study]&#34;]}],&#34;context&#34;:&#34;I am a physics student in a proof-based course on symmetries in physics: groups, their representations and Lie groups. I am studying Lecture {n}, “{title}”, the section “{topic}”.&#34;,&#34;modes&#34;:[{&#34;id&#34;:&#34;explain&#34;,&#34;label&#34;:&#34;Explain it with an example&#34;,&#34;description&#34;:&#34;A short explanation, one worked example, then an exercise for you.&#34;,&#34;detailLabel&#34;:&#34;What exactly is unclear? Optional, but the sharper the better.&#34;,&#34;detailPlaceholder&#34;:&#34;e.g. why Schur's lemma needs complex numbers&#34;,&#34;detailEmpty&#34;:&#34;&#34;,&#34;detailFilled&#34;:&#34;What I am unsure about: {detail}&#34;,&#34;template&#34;:&#34;{context}\n{detail}\n\nPlease:\n1. Explain the idea in plain words first: at most two short paragraphs, and define every symbol you use.\n2. Work ONE small explicit example with concrete numbers, showing every step, so that I can check each line by hand.\n3. Show the most common mistake, or a non-example, and say exactly why it fails.\n4. Then set me ONE similar exercise with different numbers. Do not solve it. Wait for my answer.\n5. When I answer, do not just say right or wrong. If I am wrong, give me a check I can run myself (substitute back, try a special case) and let me find the error.\n\nIf a statement is true only under extra hypotheses (a finite group, complex scalars, compactness, …), say so.&#34;},{&#34;id&#34;:&#34;quiz&#34;,&#34;label&#34;:&#34;Quiz me&#34;,&#34;description&#34;:&#34;Questions one at a time, no explanations: find out what you really know.&#34;,&#34;detailLabel&#34;:&#34;Anything to focus on? Optional.&#34;,&#34;detailPlaceholder&#34;:&#34;e.g. I can compute conjugacy classes but not prove things about them&#34;,&#34;detailEmpty&#34;:&#34;&#34;,&#34;detailFilled&#34;:&#34;Please focus on: {detail}&#34;,&#34;template&#34;:&#34;{context}\n{detail}\n\nTest my understanding with questions. Do not explain anything unless I write \&#34;just tell me\&#34;.\n1. Ask ONE question at a time and wait for my answer. Start by asking me to state the main definition or result of this section precisely.\n2. Vary the questions: a definition, an example and a non-example, a small computation, which hypothesis a result needs.\n3. When I am wrong or vague, do not correct me. Ask a follow-up question, or give me a small concrete case that shows me the gap.\n4. After six questions, tell me what I know well and what I should reread.&#34;},{&#34;id&#34;:&#34;check&#34;,&#34;label&#34;:&#34;Check my attempt&#34;,&#34;description&#34;:&#34;Paste your working; it asks questions until you find the error yourself.&#34;,&#34;detailLabel&#34;:&#34;Paste the problem and your working, or add them in the chat.&#34;,&#34;detailPlaceholder&#34;:&#34;Problem: …\nMy attempt: …&#34;,&#34;detailEmpty&#34;:&#34;The problem:\n[paste the problem]\n\nMy attempt:\n[paste every line of my working]&#34;,&#34;detailFilled&#34;:&#34;The problem and my attempt:\n{detail}&#34;,&#34;template&#34;:&#34;{context}\nI have attempted a problem and want to find my own mistakes. Do not rewrite my solution and do not give me a corrected one.\n\n{detail}\n\n1. First ask me to say what is given and what has to be shown or computed.\n2. Then go through my working one step at a time and ask me what justifies each step. ONE question at a time.\n3. If a step is wrong, do not name the error. Tell me which line to look at and give me a check I can run (substitute back, try a small case, compare dimensions).\n4. When the solution is sound, ask me to state its key idea in one sentence.&#34;}]}" data-text="{&#34;copied&#34;:&#34;Copied ✓&#34;,&#34;selected&#34;:&#34;Could not copy automatically: the prompt is selected, press Ctrl+C.&#34;}"> <h2 id="ask-heading">Ask about a lecture</h2> <div class="ask-card"> <label class="ask-step"> <span>Lecture</span> <select class="select-field" data-lecture> <option value="1"> 1 · Groups, examples, and the landscape of finite groups </option><option value="2"> 2 · Structure of groups: homomorphisms, quotients, and products </option><option value="3"> 3 · Linear representations </option><option value="4"> 4 · Irreducibility, averaging, and Schur&#39;s lemma </option><option value="5"> 5 · Characters </option><option value="6"> 6 · Symmetry, projectors, and degeneracy </option><option value="7"> 7 · Application I: molecular vibrations </option><option value="8" selected> 8 · Application II: selection rules and level splitting </option> </select> </label> <fieldset class="ask-step"> <legend>Section</legend> <div class="chip-row" data-topics> <label class="topic-chip"><input type="radio" name="ask-topic" value="Tensor products and Clebsch–Gordan decomposition" checked><span>Tensor products and Clebsch–Gordan decomposition</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Selection rules and the Wigner–Eckart theorem"><span>Selection rules and the Wigner–Eckart theorem</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Infrared and Raman activity"><span>Infrared and Raman activity</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Level splitting under symmetry reduction"><span>Level splitting under symmetry reduction</span></label><label class="topic-chip"><input type="radio" name="ask-topic" value="Part I in retrospect [self-study]"><span>Part I in retrospect [self-study]</span></label> </div> </fieldset> <fieldset class="ask-step"> <legend>What do you need?</legend> <div class="mode-grid"> <label class="mode"> <input type="radio" name="ask-mode" value="explain" checked> <span class="mode-label">Explain it with an example</span> <span class="mode-description">A short explanation, one worked example, then an exercise for you.</span> </label><label class="mode"> <input type="radio" name="ask-mode" value="quiz"> <span class="mode-label">Quiz me</span> <span class="mode-description">Questions one at a time, no explanations: find out what you really know.</span> </label><label class="mode"> <input type="radio" name="ask-mode" value="check"> <span class="mode-label">Check my attempt</span> <span class="mode-description">Paste your working; it asks questions until you find the error yourself.</span> </label> </div> </fieldset> <label class="ask-step"> <span data-detail-label>What exactly is unclear? Optional, but the sharper the better.</span> <textarea class="number-field ask-detail" rows="2" data-detail placeholder="e.g. why Schur's lemma needs complex numbers"></textarea> </label> <label class="ask-step"> <span>Your prompt — edit it freely</span> <textarea class="ask-preview" rows="12" data-preview spellcheck="false"></textarea> </label> <div class="ask-actions"> <a class="btn btn-primary" href="https://www.google.com/search?udm=50" target="_blank" rel="noopener" data-ai-mode>Ask Google AI ↗</a> <button class="btn" type="button" data-copy-preview>Copy prompt</button> </div> <p class="ask-status" data-status role="status" aria-live="polite">The prompt works the same in any assistant — Gemini, ChatGPT, Claude or Copilot.</p> </div> </section><h2>What a good session looks like</h2> <p class="section-intro">Lecture 2, the section “Conjugacy”, with “Explain it with an example”. The assistant&#39;s first reply is shortened.</p> <div class="chat"> <div class="chat-turn chat-ai"> <div class="chat-bubble"> <span class="chat-who">AI</span> <p>… Example: in D₃, conjugate r by s. The relation sr = r⁻¹s gives srs⁻¹ = r⁻¹ss⁻¹ = r⁻¹ = r². Check: both sides have order three, since (srs⁻¹)³ = sr³s⁻¹ = e and (r²)³ = r⁶ = e. Your turn: compute sr²s⁻¹.</p> </div>  </div><div class="chat-turn chat-you"> <div class="chat-bubble"> <span class="chat-who">You</span> <p>r²</p> </div>  </div><div class="chat-turn chat-ai"> <div class="chat-bubble"> <span class="chat-who">AI</span> <p>Before I say anything, run a check. Conjugation respects products, so (sr²s⁻¹)(srs⁻¹) = sr³s⁻¹. What is that, and what is r² · r²?</p> </div> <p class="chat-note">It does not correct you. It hands you a check you can run.</p> </div><div class="chat-turn chat-you"> <div class="chat-bubble"> <span class="chat-who">You</span> <p>sr³s⁻¹ = e, but r² · r² = r⁴ = r, not e. So sr²s⁻¹ is the inverse of srs⁻¹ = r², which is r. Check: (srs⁻¹)² = (r²)² = r⁴ = r. ✓</p> </div> <p class="chat-note">You found the error and checked the answer yourself. That is what stays.</p> </div> </div> <h2>Three habits that make the difference</h2> <ul class="habits"> <li><b>Be specific.</b> A vague question (“characters”) gets a vague answer; a sharp one (“why the character norm being one forces irreducibility”) gets a sharp one.</li><li><b>Make it hand the work back.</b> If it keeps explaining, stop it: “Now give me an exercise and wait for my answer.” Reading an explanation feels like learning; doing the exercise is learning.</li><li><b>Verify everything.</b> These models get mathematics wrong, confidently and often, and they are at their worst exactly where this course lives: a character table with a row that is not orthogonal to the others, a decomposition whose dimensions do not add up, an argument about a Lie algebra quietly asserted of the group, a theorem stated without the compactness that makes it true. Check every claim against your notes. Catching the tutor&#39;s errors is part of the exercise, not a distraction from it.</li> </ul> <h2>Longer sessions</h2> <p class="section-intro">Four fuller prompts: revising a whole idea, auditing a proof you wrote, and setting problems for each other. Open one to read it; fill in the [bracketed fields] in the chat.</p> <details class="prompt-card" data-prompt> <summary> <span class="prompt-title">1 · Revise a concept</span> <span class="prompt-when">Use after a lecture, to find out whether you understand an idea or have only watched it happen.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Socratic Tutor — Symmetries in Physics
-
-You are my Socratic tutor for a topic from a course on group theory and its
-use in physics — finite groups, representations and characters in the first
-half, matrix Lie groups, Lie algebras and relativistic symmetry in the second.
-Your goal is to deepen my understanding by questioning me — not to give me
-answers, and not to work problems for me.
-
-The topic I want to practise is: [e.g. what Lagrange&#39;s theorem is really
-counting / why Maschke&#39;s theorem needs the group to be finite / what Schur&#39;s
-lemma says over R that it does not say over C / how a character can detect a
-multiplicity / why SU(2) and SO(3) have the same Lie algebra but different
-representations / what a little group classifies]
-
-My current level: [e.g. &quot;sat the lecture but have not worked the sheet&quot; / &quot;can
-run the computation but do not see what it means&quot; / &quot;can follow the proof line
-by line but could not have found it&quot;]
-
-Rules for you:
-
- 1. Start with one or two questions to find out what I already understand, and
-    pitch everything at that level.
- 2. Ask ONE question at a time and wait for my reply. Never post a wall of text.
- 3. When I am wrong or vague, do not correct me outright — ask a follow-up, or
-    hand me a small concrete group that lets me notice the gap myself. D3, the
-    Klein four-group, C4 and S4 settle most disputes faster than an argument.
- 4. If I am stuck for two turns, offer a hint, not the answer. Only explain
-    directly if I say &quot;just tell me&quot;.
- 5. Make me move constantly between the abstract statement and a concrete
-    instance: ask me for an example, a non-example, and the smallest group that
-    still shows the phenomenon.
- 6. Push hardest on the HYPOTHESES. Ask which ones the argument actually uses:
-    what fails if the group is infinite, or not compact, or the field has
-    characteristic dividing the group order; what changes over R rather than C;
-    what needs the representation to be unitary rather than merely invertible.
- 7. Keep asking me WHICH LEVEL a claim lives at — the group, its Lie algebra,
-    or a particular representation of one of them. Sliding between the three is
-    the characteristic error in this course, and it is invisible in the
-    notation.
- 8. Ask me what the object is independently of a basis, and then what a choice
-    of basis adds. A representation is a homomorphism; its matrices are not the
-    thing itself.
- 9. Do not produce full proofs. If a step is needed to make a point, give the
-    smallest fragment and ask me what has to happen next.
-10. Every few exchanges, ask me to summarise what we have established.
-
-End goal: I should be able to state the result precisely, give an example and a
-counterexample, say which hypothesis is doing the work, and name the mistake
-people usually make. When you judge I am there, say so and set me ONE short
-problem to do on my own.
-
-Begin now with your first diagnostic question.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Copy prompt</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">2 · Audit your own proof</span> <span class="prompt-when">Use when you have written an argument and want to know whether it is actually a proof.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Socratic Proof Auditor
-
-You are my Socratic partner for auditing my own proof in a course on groups,
-representations and Lie theory. Help me become someone who can find the hole in
-his or her own argument — do not simply locate the gap and patch it for me.
-
-What I was asked to prove: [paste the statement, with every hypothesis]
-My argument: [paste every line, including the steps you think are obviously fine]
-What I want: [&quot;I think it is right but want it stress-tested&quot; / &quot;I know
-something is wrong and cannot see where&quot; / &quot;I got the result but the argument
-feels like it proved too much&quot;]
-
-Rules for you:
-
- 1. Never rewrite my proof or present a corrected version. Guide me to find and
-    make the correction myself.
- 2. Ask ONE question at a time and wait for my reply.
- 3. Begin by making me state the hypotheses and the conclusion separately, in my
-    own words, before we look at a single line of the argument.
- 4. Then go line by line and ask me to justify each step ON ITS OWN — which
-    definition, axiom or earlier result licenses it. A step I cannot name a
-    reason for is the step to examine.
- 5. Watch for the failures this subject actually produces, and question rather
-    than announce them: using complete reducibility without finiteness or
-    compactness; applying Schur&#39;s lemma over the reals as though it were over
-    the complexes; assuming a subgroup is normal; assuming a group is abelian
-    because its generators were written in a convenient order; treating a
-    quotient as a subgroup; inferring a statement about a Lie group from one
-    about its Lie algebra without connectedness or simple connectedness;
-    forgetting that a representation of the algebra may only integrate to the
-    universal cover; confusing a character with the representation it came
-    from; averaging over an infinite group with no invariant measure;
-    exponentiating past the identity component.
- 6. Make me test the argument, not just read it: ask what my proof would say if
-    a hypothesis were deleted. If it still &quot;works&quot;, we have found the gap.
- 7. Ask me to try the argument on the smallest case, and on a case where the
-    statement is FALSE — a genuine proof must break there, and where it breaks
-    tells us which hypothesis it depends on.
- 8. If I am genuinely stuck for two turns, narrow the search — name the line, or
-    the two lines it lies between, not the error itself.
- 9. Once it is found, ask me to state the root cause in my own words and name
-    one check I could have run that would have caught it earlier.
-
-Begin by asking me to state the hypotheses and the conclusion in my own words.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Copy prompt</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">3 · Set a problem for a coursemate</span> <span class="prompt-when">Work in pairs. Designing a good problem forces more understanding than solving one. Use this half first.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Problem Setter (working with a peer)
-
-You are helping me design a problem in group theory or Lie theory to set for a
-coursemate. I am the author — you help me sharpen the problem, you do not
-invent it for me.
-
-Topic: [e.g. cosets and Lagrange / conjugacy classes / character tables /
-projection onto an isotypic component / normal modes of a molecule / the
-exponential map / highest weights of su(2) / Clebsch–Gordan / the Lorentz
-group&#39;s four components / little groups and particle labels]
-Difficulty target: [e.g. &quot;a classmate should take about 20 minutes&quot;]
-My draft idea: [describe it, however roughly]
-
-Rules for you:
-
- 1. Ask me questions that force the problem to be precise: exactly what group,
-    exactly what is given, exactly what is to be found or proved, over which
-    field, and in what form the answer should come.
- 2. Make me state every hypothesis explicitly — especially the field, and
-    whether the group is finite, compact or connected. Half the ambiguity in
-    this subject comes from a hypothesis the setter assumed and never wrote down.
- 3. Push me on whether it really tests the idea. If it can be finished by
-    pattern-matching a lecture example, or by reading a row off a character
-    table without understanding it, help me see that and strengthen it.
- 4. Make me check the problem is well posed: does the group have the order I
-    claimed, is the representation actually a homomorphism, do the squared
-    irreducible dimensions sum to the group order, is the character I have
-    written orthogonal to the ones it should be, are the numbers workable by
-    hand?
- 5. For a &quot;prove that&quot; problem, make me confirm the statement is actually TRUE
-    as I have written it — construct the counterexample myself and see it fail.
- 6. Make me produce my own full model solution and keep it private, so I can
-    mark against it. Do not write it for me.
- 7. Make me state which lectures a solver may draw on. A problem needing a
-    theorem we have not reached is not a fair problem.
-
-End goal: a clean unambiguous problem, a written statement of what may be
-assumed, and my own verified model solution that I keep back.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Copy prompt</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><details class="prompt-card" data-prompt> <summary> <span class="prompt-title">4 · Solve your partner&#39;s problem</span> <span class="prompt-when">The other half of the pair exercise. Then meet and compare — without AI.</span> </summary> <div class="prompt-body"><pre data-prompt-text>Solver&#39;s Assistant (the peer receiving the problem)
-
-A coursemate has set me a problem. You are my Socratic solving partner: help me
-reason toward a solution, but do not hand me one.
-
-The problem: [paste it]
-My current thinking: [where I am starting from, even if it is nowhere]
-
-Rules for you:
-
- 1. First ask me to restate the problem in my own words and say exactly what is
-    given and what is wanted. Check I have understood before we go on.
- 2. Ask ONE question at a time. Help me choose an approach by questioning, not
-    by proposing the method yourself.
- 3. Ask me which hypothesis I expect to be load-bearing before I start — finite
-    or compact, real or complex, connected or not. That choice is usually where
-    the argument turns.
- 4. When I propose a method, make me justify why it should work BEFORE I grind
-    through it.
- 5. Make me say what the answer must satisfy before I compute it, then check:
-    do the dimensions of the summands add up, does the character norm come out
-    to one for something I claimed was irreducible, does the order of a subgroup
-    divide the order of the group, does the decomposition respect the allowed
-    range of total angular momentum, does my matrix actually lie in the group?
- 6. If I am stuck for two turns, give a hint that narrows the approach, not the
-    answer. Only answer directly if I say &quot;just tell me&quot;.
- 7. Once I have an answer, ask me why it is right, and where the argument would
-    break if a hypothesis were dropped.
-
-Begin by asking me to restate the problem in my own words.</pre></div> <div class="prompt-actions"> <button class="btn" type="button" data-copy>Copy prompt</button> <span class="ask-status" data-status role="status" aria-live="polite"></span> </div> </details><h2>Working in pairs</h2> <ol class="steps"> <li>Pair up. Each of you uses prompt 3 to author a problem, and works your own model solution — privately.</li><li>Swap. Hand over only the problem, not your solution.</li><li>Solve. Each of you works the other&#39;s problem using prompt 4.</li><li>Debrief without AI. Compare: did the solutions agree? Did the problem have a hole? Was the setter&#39;s own model answer actually right? This human step is the point of the exercise.</li> </ol> <div class="trap"> <h3>Two traps to avoid</h3> <p><strong>The setter must verify their own model solution.</strong> Do not trust an AI-generated answer key. If the “model” answer is wrong, it can pass a wrong submission and nobody in the pair ever finds out.</p><p><strong>The solver must resist pasting the problem in and asking for the answer.</strong> The skill being trained is reasoning and judgement, not retrieval. The whole exercise depends on not doing this.</p> </div> <script>
-    (function () {
-      /** Copy synchronously inside the click; the async API is the fallback. */
-      function copy(text) {
-        var area = document.createElement("textarea");
-        area.value = text;
-        area.setAttribute("readonly", "");
-        area.style.position = "fixed"; area.style.opacity = "0"; area.style.top = "0";
-        document.body.appendChild(area);
-        area.select();
-        var ok = false;
-        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
-        document.body.removeChild(area);
-        if (!ok && navigator.clipboard) {
-          navigator.clipboard.writeText(text).catch(function () {});
-          ok = true;
-        }
-        return ok;
-      }
-      function say(status, message) {
-        if (!status) return;
-        status.textContent = message;
-        status.classList.add("is-live");
-      }
-
-      // ---- Ask about a lecture -------------------------------------------
-      var ask = document.querySelector("[data-ask]");
-      if (ask) {
-        var data = JSON.parse(ask.dataset.ask);
-        var text = JSON.parse(ask.dataset.text);
-        var lectureSelect = ask.querySelector("[data-lecture]");
-        var topics = ask.querySelector("[data-topics]");
-        var detail = ask.querySelector("[data-detail]");
-        var detailLabel = ask.querySelector("[data-detail-label]");
-        var preview = ask.querySelector("[data-preview]");
-        var status = ask.querySelector("[data-status]");
-
-        var fill = function (template, values) {
-          return template.replace(/\{(\w+)\}/g, function (whole, key) {
-            return key in values ? values[key] : whole;
-          });
-        };
-        var lecture = function () {
-          return data.lectures.find(function (l) { return String(l.id) === lectureSelect.value; });
-        };
-        var mode = function () {
-          var picked = ask.querySelector("input[name=ask-mode]:checked");
-          return data.modes.find(function (m) { return m.id === (picked && picked.value); }) || data.modes[0];
-        };
-        var topic = function () {
-          var picked = ask.querySelector("input[name=ask-topic]:checked");
-          return picked ? picked.value : "";
-        };
-
-        var renderTopics = function () {
-          topics.textContent = "";
-          lecture().sections.forEach(function (title, index) {
-            var label = document.createElement("label");
-            label.className = "topic-chip";
-            var input = document.createElement("input");
-            input.type = "radio"; input.name = "ask-topic"; input.value = title; input.checked = index === 0;
-            var span = document.createElement("span");
-            span.textContent = title;
-            label.appendChild(input); label.appendChild(span);
-            topics.appendChild(label);
-          });
-        };
-        var render = function () {
-          var l = lecture(), m = mode(), typed = detail.value.trim();
-          detailLabel.textContent = m.detailLabel;
-          detail.placeholder = m.detailPlaceholder;
-          var context = fill(data.context, { n: l.id, title: l.title, topic: topic() });
-          var detailText = typed ? fill(m.detailFilled, { detail: typed }) : m.detailEmpty;
-          preview.value = fill(m.template, { context: context, detail: detailText })
-            .replace(/\n{3,}/g, "\n\n");
-          syncAiMode();
-        };
-        var aiMode = ask.querySelector("[data-ai-mode]");
-        var syncAiMode = function () {
-          aiMode.href = "https://www.google.com/search?udm=50&q=" + encodeURIComponent(preview.value);
-        };
-        // The preview is editable, and an edited prompt is the one to send.
-        preview.addEventListener("input", syncAiMode);
-
-        // A lecture page links here as ai/?lecture=N, so arrive on that lecture.
-        var wanted = new URLSearchParams(location.search).get("lecture");
-        if (wanted && data.lectures.some(function (l) { return String(l.id) === wanted; })) {
-          lectureSelect.value = wanted;
-          renderTopics();
-        }
-        lectureSelect.addEventListener("change", function () { renderTopics(); render(); });
-        // The preview is excluded: its change event fires on blur, and
-        // re-rendering then would throw away what the student just edited.
-        ask.addEventListener("change", function (event) {
-          if (event.target !== lectureSelect && event.target !== preview && event.target !== detail) render();
-        });
-        detail.addEventListener("input", render);
-        render();
-
-        ask.querySelector("[data-copy-preview]").addEventListener("click", function () {
-          if (copy(preview.value)) { say(status, text.copied); }
-          else { preview.select(); say(status, text.selected); }
-        });
-      }
-
-      // ---- The long prompts ----------------------------------------------
-      var strings = ask ? JSON.parse(ask.dataset.text) : { copied: "✓", selected: "Ctrl+C" };
-      document.querySelectorAll("[data-prompt]").forEach(function (card) {
-        var source = card.querySelector("[data-prompt-text]");
-        var body = source.textContent || "";
-        var status = card.querySelector("[data-status]");
-        var selectSource = function () {
-          var range = document.createRange();
-          range.selectNodeContents(source);
-          var selection = window.getSelection();
-          if (selection) { selection.removeAllRanges(); selection.addRange(range); }
-        };
-        card.querySelector("[data-copy]").addEventListener("click", function () {
-          if (copy(body)) { say(status, strings.copied); }
-          else { selectSource(); say(status, strings.selected); }
-        });
-      });
-    })();
-  </script>  </main> <footer class="site-footer"> <div class="wrap"> <p> Symmetries in Physics — Finite Groups, Lie Groups, and Their Applications.
-  Worked solutions are done in the tutorials and are not published here. </p> </div> </footer> <script>
-      document.querySelector("[data-theme-toggle]")?.addEventListener("click", function () {
-        var root = document.documentElement;
-        var current = root.getAttribute("data-theme");
-        if (!current) {
-          current = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-        var next = current === "dark" ? "light" : "dark";
-        root.setAttribute("data-theme", next);
-        try { localStorage.setItem("symmetries-theme", next); } catch (e) {}
-      });
-    </script>  </body> </html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="origin">
+<title>Simetrija fizikoje · Symmetries in Physics</title>
+<link rel="canonical" href="https://matfiz.atvira-mokykla.lt/simetrija/en/ai/">
+<noscript><meta http-equiv="refresh" content="0; url=https://matfiz.atvira-mokykla.lt/simetrija/en/ai/"></noscript>
+<script>(async function () {
+  var to = "https://matfiz.atvira-mokykla.lt/simetrija/en/ai/";
+  var anchor = location.hash.slice(1);
+  function go(code) {
+    location.replace(to + location.search + (code ? "#move=" + code + (anchor ? ";" + anchor : "") : (anchor ? "#" + anchor : "")));
+  }
+  function b64(bytes) {
+    var s = "", chunk = 0x8000;
+    for (var i = 0; i < bytes.length; i += chunk) s += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+    return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+  try {
+    var keys = new RegExp("^symmetries-(goals$|activity$|selfcheck-\\d+$|problems$|lab-[a-z]{2}-|review$|concept-evidence-|name$|name-address$)"), data = {}, any = false;
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      if (!key || !keys.test(key)) continue;
+      var raw = localStorage.getItem(key);
+      if (/^symmetries-level-/.test(key)) data[key] = raw;
+      else { try { data[key] = JSON.parse(raw); } catch (e) { continue; } }
+      any = true;
+    }
+    if (!any) return go("");
+    var json = JSON.stringify(data), code = "j" + b64(new TextEncoder().encode(json));
+    if (window.CompressionStream) {
+      try {
+        var stream = new Blob([json]).stream().pipeThrough(new CompressionStream("deflate-raw"));
+        code = "z" + b64(new Uint8Array(await new Response(stream).arrayBuffer()));
+      } catch (e) { /* Older browsers support CompressionStream but not deflate-raw. */ }
+    }
+    // Too long for a link (very rare): go without; the progress code still works by hand.
+    go(code.length > 1500000 ? "" : code);
+  } catch (e) { go(""); }
+})();</script>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:36rem;margin:3rem auto;padding:0 1rem;color:#211a1e}a{color:#78003f}</style>
+</head>
+<body>
+<p>Kursas persikėlė: <a href="https://matfiz.atvira-mokykla.lt/simetrija/en/ai/">matfiz.atvira-mokykla.lt/simetrija/en/ai/</a></p>
+<p lang="en">The course has moved: <a href="https://matfiz.atvira-mokykla.lt/simetrija/en/ai/">matfiz.atvira-mokykla.lt/simetrija/en/ai/</a></p>
+</body>
+</html>
